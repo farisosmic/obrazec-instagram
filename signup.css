@@ -205,3 +205,12 @@ input:not(:placeholder-shown) + span {
 .signup-link:active {
     color: #7fcafa;
 }
+
+@media(max-width:600px){
+    .sigma{
+        width: 100%;
+        border: 1px solid lightgray;
+        display: flex;
+        flex-direction: column;
+    }
+}
