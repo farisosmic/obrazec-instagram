@@ -23,6 +23,7 @@ function updateSpan() {
         inputLabel.classList.add('active');
     }
 }
+
 function validateEmail() {
     const emailInput = document.getElementById('email');
     const emailValue = emailInput.value;
@@ -37,25 +38,52 @@ function validateEmail() {
         inputLabel.classList.remove('valid');
     }
 }
+
 document.getElementById('sigma-form').addEventListener('submit', function(event) {
-    // First, prevent the default submission
     event.preventDefault();
 
-    // Check if the form is valid (all required fields filled)
     if (this.checkValidity()) {
-        // Perform custom email validation
         const emailInput = document.getElementById('email');
+        const passwordInput = document.getElementById('password');
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const testPassword = "YourPassword123!";
+        const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[-_@$!%*?&])[A-Za-z\d-_@$!%*?&]{8,}$/;
 
-        if (emailPattern.test(emailInput.value)) {
-            // If the email is valid, reload the page
-            window.location.href = window.location.href; // Reload the current page
-        } else {
-            // If the email is invalid, show an alert
-            alert('Please enter a valid email address.');
+        console.log(passwordPattern.test(testPassword)); // Should return true if it meets the criteria
+
+        if (!emailPattern.test(emailInput.value)) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Invalid Email',
+                text: 'Please enter a valid email address.',
+            });
+            return;
         }
+
+        if (!passwordPattern.test(passwordInput.value)) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Weak Password',
+                text: 'Password must be at least 8 characters long and include an uppercase letter, a lowercase letter, a number, and a special character.',
+            });
+            return;
+        }
+
+        Swal.fire({
+            icon: 'success',
+            title: 'Good Job!',
+            text: 'Successfully created account.',
+            timer: 2000, // 2 seconds
+            timerProgressBar: true,
+            willClose: () => {
+                window.location.href = window.location.href;
+            }
+        });
     } else {
-        // If the form is not valid, alert the user
-        alert('Please fill out all required fields correctly.');
+        Swal.fire({
+            icon: 'warning',
+            title: 'Incomplete Form',
+            text: 'Please fill out all required fields correctly.',
+        });
     }
 });
