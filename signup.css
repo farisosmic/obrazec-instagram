@@ -1,0 +1,207 @@
+*{
+    margin:0;
+    padding:0;
+    font-family:'Arial', sans-serif;
+}
+html,
+body{
+    width: 100%;
+    height: 100%;
+}
+.main{
+    width: 100%;
+    min-height: calc(100vh - 200px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex:1;
+}
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: auto;
+    width: 100%;
+    height: 200px;
+    box-sizing: border-box;
+    padding: 20px 0;
+    font-family: Arial, sans-serif;
+    color: #8e8e8e;
+    text-align: center;
+}
+.footer-links {
+    margin-bottom: 15px;
+}
+.footer-links a {
+    color: #8e8e8e;
+    font-size: 12px;
+    text-decoration: none;
+    margin: 0 8px;
+    transition: color 0.3s ease;
+}
+.footer-links a:hover {
+    color: #262626;
+}
+.footer-copyright {
+    font-size: 12px;
+}
+.sigma{
+    width: 400px;
+    height: 800px;
+    border: 1px solid lightgray;
+    display: flex;
+    flex-direction: column;
+}
+.top-sigma{
+    width: 100%;
+    height: 15%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+#logo{
+    width: 60%;
+    max-height: 100%;
+    max-width: 50%;
+    margin-bottom: 4%;
+}
+.middle-sigma{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+#sigma-form{
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.facebook-buttonlink{
+    width: 70%;
+    height: 35px;
+    margin-top: 20px;
+    border-radius: 10px;
+    border: 0px;
+    background-color: #1877f2;
+}
+.facebook-loginbutton{
+    width: 100%;
+    height: 35px;
+    border-radius: 10px;
+    border: 0px;
+    background-color: #1877f2;
+    color:white;
+    font-size: small;
+    font-weight: bold;
+}
+.input-label{
+    position: relative;
+    width: 70%;
+    margin-top: 10px;
+    text-align: left;
+}
+.input-span{
+    pointer-events: none;
+    position: absolute;
+    left: 10px;
+    top: 12px;
+    font-size: small;
+    transform-origin: left;
+    transition: 0.1s;
+    opacity: 0.5;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: calc(100% - 20px);
+}
+.input-sigma{
+    width: 100%;
+    height: 40px;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+    background-color: #fafafa;
+    padding-left: 10px;
+    padding-right: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+    white-space: nowrap;
+}
+#country{
+    color: black;
+}
+#country.default{
+    color: #7d7d7d;
+}
+input:focus {
+    outline: none;
+    border-color: #a8a8a8; 
+}
+input:not(:placeholder-shown) + span {
+    background-color: white;
+    transform: scale(0.75) translateY(-110%);
+}
+#country:focus {
+    outline: none;
+    border-color: #a8a8a8;
+}
+.input-label.active .input-span {
+    /* Moves the placeholder up when a selection is made */
+    background-color: white;
+    transform: scale(0.75) translateY(-110%);
+}
+.submit-button{
+    width: 70%;
+    height: 35px;
+    margin-top: 20px;
+    border-radius: 10px;
+    border: 0px;
+    background-color: #4cb5f9;
+    color:white;
+    font-size: small;
+    font-weight: bold;
+}
+.line{
+    border: 1px solid lightgray;
+}
+.label1{
+    text-align: center;
+}
+.divider-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    margin: 20px;
+}
+.line-left, .line-right {
+    flex-grow: 1;
+    height: 1px;
+    background-color: #dbdbdb;
+}
+.line-text {
+    padding: 0 15px;
+    color: #737373;
+    font-size: 14px;
+}
+.bottom-sigma{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex:1;
+}
+.signup{
+    color: #0095f6;
+    text-decoration: none;
+}
+.signup-link:active {
+    color: #7fcafa;
+}
