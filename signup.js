@@ -13,7 +13,7 @@ function formatPhoneNumber(input) {
 }
 
 function updateSpan() {
-    const selectElement = document.getElementById("country"); // Adjusted to match your select element's ID
+    const selectElement = document.getElementById("country");
     const selectedValue = selectElement.value;
     const inputLabel = selectElement.closest('.input-label');
 
@@ -38,11 +38,24 @@ function validateEmail() {
     }
 }
 document.getElementById('sigma-form').addEventListener('submit', function(event) {
-    const emailInput = document.getElementById('email');
-    const isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value);
-    
-    if (!isEmailValid) {
-        alert('Please enter a valid email address.');
-        event.preventDefault(); // Prevent form submission
+    // First, prevent the default submission
+    event.preventDefault();
+
+    // Check if the form is valid (all required fields filled)
+    if (this.checkValidity()) {
+        // Perform custom email validation
+        const emailInput = document.getElementById('email');
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (emailPattern.test(emailInput.value)) {
+            // If the email is valid, reload the page
+            window.location.href = window.location.href; // Reload the current page
+        } else {
+            // If the email is invalid, show an alert
+            alert('Please enter a valid email address.');
+        }
+    } else {
+        // If the form is not valid, alert the user
+        alert('Please fill out all required fields correctly.');
     }
 });
