@@ -144,7 +144,6 @@ input:focus {
     border-color: #a8a8a8; 
 }
 input:not(:placeholder-shown) + span {
-    background: transparent;
     transform: scale(0.75) translateY(-110%);
 }
 #country:focus {
@@ -152,8 +151,6 @@ input:not(:placeholder-shown) + span {
     border-color: #a8a8a8;
 }
 .input-label.active .input-span {
-    /* Moves the placeholder up when a selection is made */
-    background-color: white;
     transform: scale(0.75) translateY(-110%);
 }
 .submit-button{
